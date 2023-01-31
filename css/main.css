@@ -1,0 +1,1007 @@
+/*reset*/
+	/* http://meyerweb.com/eric/tools/css/reset/ 
+	v2.0 | 20110126
+	License: none (public domain)
+	*/
+
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed, 
+	figure, figcaption, footer, header, hgroup, 
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+	/* HTML5 display-role reset for older browsers */
+	article, aside, details, figcaption, figure, 
+	footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+	body {
+		line-height: 1;
+	}
+	ol, ul {
+		list-style: none;
+	}
+	blockquote, q {
+		quotes: none;
+	}
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+		content: '';
+		content: none;
+	}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+	a{
+		cursor: pointer;
+		text-decoration: none;
+	}
+/* general */
+	body{
+		background-color: white;
+	}
+	::selection{
+		background: #eb0029;
+	}
+	::-moz-selection{
+		background: #eb0029;
+	}
+	html{
+		border-top: 0px solid transparent;
+	}
+
+/* loading */
+	@import url(https://fonts.googleapis.com/css?family=Roboto:400,900italic,900,700italic,700,500italic,500,400italic,300italic,300,100italic,100);
+	
+
+	.loading-page {
+		background: black;
+		position: fixed;
+		width: 100vw;
+		height: 100vh;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: center;
+			-ms-flex-pack: center;
+				justify-content: center;
+		-webkit-box-align: center;
+			-ms-flex-align: center;
+				align-items: center;
+		z-index: 20;
+	}
+	.loading-page .counter {
+		text-align: center;
+	}
+	.loading-page .counter p {
+		font-size: 40px;
+		font-weight: 100;
+		color: #eb0029;
+	}
+	.loading-page .counter h1 {
+		color: white;
+		font-size: 60px;
+		margin-top: -10px;
+	}
+	.loading-page .counter hr {
+		background: #eb0029;
+		border: none;
+		height: 1px;
+	}
+	.loading-page .counter {
+		position: relative;
+		width: 200px;
+	}
+	.loading-page .counter h1.abs {
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+	.loading-page .counter .color {
+		width: 0px;
+		overflow: hidden;
+		color: #eb0029;
+	}
+
+	.loading-page img{
+		display: none;
+	}
+
+/* menu */
+
+	.sidemenu{
+		position: fixed;
+		display: none;
+		z-index: 5;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		overflow: hidden;
+		background-color: black;
+		left: 0;
+		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	}
+	.sidemenu nav{
+		margin-top: 11%;
+	}
+	.sidemenu nav span{
+		opacity: 0;
+		padding: 10px;
+		width: 100%;
+		text-transform: uppercase;
+		text-align: center;
+		font-family: Lato, sans-serif;
+		font-size: 2em;
+	}
+
+	.side span a{
+		position: relative;
+		color: white;
+	}
+	.sidemenu nav span:nth-child(1){margin-top: 35px;}
+	.sidemenu nav span a:hover{text-decoration: none;}
+
+	.topmenu{
+		text-transform: uppercase;
+		position: fixed;
+		z-index: 4;
+		width: 100%;
+		overflow: hidden;
+		height: 60px;
+		background-color: #eb0029;
+		/* border-bottom: 1px solid black; */
+	}
+	.topmenu a.allNews{
+		margin-left: 60px;
+		font-weight: 900;
+	}
+	.logo{
+		position: fixed;
+		display: inline-block;
+		left: 50px;
+		top: 7px;
+		z-index: 18;
+		cursor: pointer;
+		width: 40px;
+		height: 40px;
+	}
+	.topmenu nav a{
+		display: inline;
+		top: 20px;
+		padding: 10px;
+		color: black;
+		font-family: Lato, sans-serif;
+		white-space: nowrap;
+		-webkit-transition: all 0.3s linear;
+		-o-transition: all 0.3s linear;
+		transition: all 0.3s linear;
+		position: relative;
+		text-decoration: none;
+		font-size: 1em;
+		left: 500px;
+	}
+	.topmenu img{
+		display: none;
+	}
+	.menuIcon{
+		top: 12px;
+	}
+	svg{
+		position: fixed;
+		left: 250px;
+		z-index: 18;
+	}
+	svg line{
+		stroke: white;
+	}
+	svg:hover{
+		cursor: pointer;
+	}
+
+	.topp a:before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 3px;
+		background: white;
+		top: 50%;
+		z-index: -1;
+		animation: out 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+	  }
+	  
+	.topp a:hover:before {
+		animation: in 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+	  }
+
+	  
+	.side span a:before {
+		content: '';
+		position: absolute;
+		display: block;
+		height: 8px;
+		top: 40%;
+		background: #eb0029;
+		z-index: -1;
+		animation: out 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+	  }
+	  
+	.side span a:hover:before {
+		animation: in 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+	  }
+	  
+	  @keyframes in {
+		0% {
+		  width: 0;
+		  left: 0;
+		  right: auto;
+		}
+		100% {
+		  left: 0;
+		  right: auto;
+		  width: 100%;
+		}
+	  }
+	  @keyframes out {
+		0% {
+		  width: 100%;
+		  left: auto;
+		  right: 0;
+		}
+		100% {
+		  width: 0;
+		  left: auto;
+		  right: 0;
+		}
+	  }
+	
+	
+/* main */
+	.meny{
+		position: fixed;
+		left: 2%;
+		top: 8px;
+		font-family: Lato, sans-serif;
+		color: black;
+		-webkit-transition: color 0.3s ease;
+		-o-transition: color 0.3s ease;
+		transition: color 0.3s ease;
+		z-index: 6;
+	}
+	.meny:hover{
+		stroke: #555;
+		cursor: pointer;
+	}
+	.imazh{
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		background: url("../imazhe/cover/cover.png") no-repeat center center;
+		/* background-position-y: 30px; */
+		background-size: contain;
+		background-attachment: fixed;
+	}
+/* 
+	.videoWrapper { 
+		position: relative;
+		padding-bottom: 56.25%;
+		height: 0;
+		width: 100%;
+		margin: 0 auto;
+		background-size: cover;
+   }
+   .videoWrapper video {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+		z-index: -100;
+		transform: translateX(-50%) translateY(-50%);
+		background-size: cover;
+		transition: 1s opacity;
+		z-index: -1;
+		filter: contrast(200%);
+		filter: grayscale(100%);
+	} */
+
+/* program */
+	#program{
+		background-color: white;
+	}
+	.slider {
+		position: relative;
+		margin: 0 auto;
+		width: 90%;
+		top: 5%;
+	}
+
+	.slide_viewer {
+		overflow: hidden;
+		position: relative;
+	}
+
+	.slide_group {
+		height: 100%;
+		position: relative;
+		width: 100%;
+	}
+
+	.slide {
+		display: none;
+		height: 100%;
+		position: absolute;
+		width: 100%;
+	}
+
+	.slide:first-child {
+		display: block;
+	}
+
+	.slide:nth-of-type(1) {
+		background: url('../imazhe/program1.jpg') center center no-repeat;
+		background-size: contain;
+	}
+
+	.slide:nth-of-type(2) {
+		background: url('../imazhe/program2.png') center center no-repeat;
+		background-size: contain;
+	}
+
+	.prev{
+		position: absolute;
+		top: 145%;
+		left: 3%;
+		overflow: hidden;
+	}
+
+	.next{
+		position: absolute;
+		top: 145%;
+		left: 85%;
+		overflow: hidden;
+	}
+
+	.previous_btn, .next_btn {
+		cursor: pointer;
+		height: 65px;
+		opacity: 0.5;
+		-webkit-transition: opacity 0.4s ease-in-out;
+		-moz-transition: opacity 0.4s ease-in-out;
+		-ms-transition: opacity 0.4s ease-in-out;
+		-o-transition: opacity 0.4s ease-in-out;
+		transition: opacity 0.4s ease-in-out;
+		width: 65px;
+	}
+
+	.previous_btn:hover, .next_btn:hover {
+		opacity: 1;
+	}
+
+	@media only screen and (max-width: 767px) {
+		.previous_btn {
+			left: 50px;
+		}
+		.next_btn {
+			right: 50px;
+		}
+	}
+	
+/* team */
+	#team{
+		background-color: black;
+		/* background: url("../imazhe/staff.jpg") no-repeat left center; */
+		background-size: cover;
+		background-attachment: fixed;
+		color: white;
+	}
+	.boldTeam{
+		width: 45%;
+		float: left;
+		font-family: Lato, sans-serif;
+		height: 100%;
+	}
+	.boldTeam .vl{
+		width: 3px;
+		float: right;
+		background-color: #aaa;
+		height: 200px;
+		position: relative;
+		top: 30%;
+		opacity: 0;
+	}
+	.boldTeam h2{
+		font-size: 5em;
+		text-align: center;
+		vertical-align: middle;
+		position: relative;
+		top: 30%;
+		text-transform: uppercase;
+		color: #eb0029;
+	}
+	.team{
+		position: relative;
+		top: 12%;
+		float: right;
+		padding-left: 70px;
+		width: 50%;
+		height: 43%;
+		 column-count: 3;
+		-moz-column-count: 3; 
+	}
+
+	.volonteri{
+		position: relative;
+		top: 10%;
+		float: right;
+		padding-left: 8%;
+		width: 50%;
+		height: 57%;
+		 column-count: 2;
+		-moz-column-count: 2; 
+	}
+
+	.volun{
+		font-family: Lato, sans-serif;
+		font-size: 1.3em;
+		top: -10%;
+		left: 35%;
+		position: relative;
+		padding-left: 41px;
+		padding-bottom: 20px;
+	}
+
+	.team h3.role{
+		color: #aaa;
+		opacity: 0;
+		position: relative;
+		left: 20px;	
+		overflow: hidden;
+	}
+	h3.name{
+		color: white;	
+		position: relative;
+		left: 10px;	
+		opacity: 0;
+		overflow: hidden;
+	}
+	.team h2, .volonteri h2{
+		font-weight: 900;
+		font-family: Lato, sans-serif;
+		font-size: 1.5em;
+	}
+	.team h3, .volonteri h3{
+		font-size: 1.2em;
+		font-family: Lato, sans-serif;
+		line-height: 1.1em;
+		overflow: hidden;
+	}
+
+/* volunteers*/
+	
+	#volunteers{
+		background: url("../imazhe/ulqin.jpg") no-repeat center center; 
+		background-size: cover;
+		background-attachment: fixed;
+		font-family: Lato, sans-serif;
+		text-align: center;
+		font-size: 1.1em;
+		line-height: 1.4em;
+		color: #222222;
+	}
+	.nji{
+		width: 100%;
+		height: 37.5%;
+		background-color: black;
+	}
+	.nji img{
+		position: relative;
+		top: 100px;;
+	
+		width: 150px;
+		height: 100px;
+	}
+	.borderPoshte{
+		height: 0px;
+		position: relative;
+		display: inline-block;
+		top: 15%;
+		width: 100px;
+		border-bottom: 4px solid #eb0029;
+	}
+	.nji h2{
+		position: relative;
+		top: 40%;
+		text-align: center;
+		color: white;
+		font-size: 1.3em;
+		font-weight: 900;
+		font-family: Lato, sans-serif;
+	}
+	.dy{
+		width: 100%;
+		height: 25%;
+		background-color: transparent;
+	}
+	.dy a{
+		text-decoration: none;
+		color: white;
+	}
+	.dy a:hover{
+		text-decoration: none;
+	}
+	#volunteers .dy input{
+		background-color: white;
+		border: 1px solid #eb0029;
+		display: inline-block;
+		cursor: pointer;
+		color: #eb0029;
+		font-family: 'Open Sans Condensed', sans-serif;
+		font-size: 14px;
+		padding: 8px 18px;
+		transition: all 0.3s linear;
+		text-decoration: none;
+		text-transform: uppercase;
+		border: 1px solid #222222;
+		position: relative;
+		top: 40%;
+		width: 200px;
+		height: 50px;
+	}
+	#volunteers .dy input:hover{
+		background-color: rgba(114,198,172,0);
+		border: 1px solid black;
+		color: white;
+	}
+	.dy h1{
+		position: relative;
+		top: 30%;
+		text-align: center;
+		color: white;
+		font-size: 2em;
+		line-height: 1em;
+		font-weight: 900;
+		font-family: Lato, sans-serif;
+	}
+	.tri{
+		width: 100%;
+		height: 37.5%;
+		background-color: black;
+	}
+	.tri h1{
+		position: relative;
+		top: 15%;
+		text-align: center;
+		color: white;
+		font-size: 2.5em;
+		line-height: 1em;
+		font-weight: 900;
+		font-family: Lato, sans-serif;
+	}
+
+	.tri h2{
+		position: relative;
+		top: 25%;
+		text-align: center;
+		color: white;
+		font-size: 1.3em;
+		font-weight: 300;
+		font-family: Lato, sans-serif;
+	}
+	.tri h2.bolden{
+		font-weight: 900;
+	}
+
+	/*volunteers html */
+
+	.topmenu .volunt{
+		font-size: 2em;
+		color: white;
+		font-family: Lato, sans-serif;
+		text-align: center;
+		padding-top: 15px;
+		display: inline;
+		position: relative;
+		left: 35%;
+		top: 20%;
+	}
+	.lart{
+		height: 400px;
+		text-align: center;
+	}
+	.lart .overlay .qender{
+		position: relative;
+		top: 100px;
+		color: black;
+		font-size: 1.3em;
+	}
+	.nji.vol{
+		background-color: white;
+		height: auto;
+		
+	}
+	.nji.vol .content{
+		width: 70%;
+		color: white;
+		font-size: 1.3em;
+		line-height: 1.3em;
+		margin: 0 auto;
+		font-family: Lato, sans-serif;
+		padding: 30px;
+		background-color: black;
+		transition: width 0.3s linear;
+	}
+	.dy.vol{
+		height: auto;
+		background-color: #eb0029;
+		transition: width 0.3s linear;
+	}
+	
+	.dy.vol .form-style-8{
+		margin: 0 auto;
+	}
+	.dy.vol .form-style-8 #apply{
+		top: -10%;
+	}
+	.dy p{
+		color: #797979;
+	}
+	.dy.vol .form-style-8 textarea {
+    resize: none;
+    overflow: hidden;
+    min-height: 70px;
+    max-height: 100px;
+	}
+	.dy.vol h3 em{
+		font-style: italic; 
+		text-align: center;
+	}
+	strong{
+		font-weight: 900;
+	}
+	.nji.vol .content h3{
+		text-transform: uppercase;
+		font-size: 1em;
+		text-align: center;
+	}
+
+	.flag-icon{
+		position: relative;
+		left: 60%;
+	}
+
+/* poster */
+
+	#poster{
+		background: url("../imazhe/poster/MOCKUP-02.png") no-repeat center center;
+		background-size: contain;
+		background-attachment: fixed;
+		background-color: white;
+	}
+
+/* sponsors */
+
+	#sponsors{
+		background: url("../imazhe/SPONSORS WEB-01.png") no-repeat center center;
+		background-size: contain;
+		background-color: white;
+	}
+	
+/* contact */
+
+	#contact{
+		background-color: #eb0029;
+	}
+	#contact h1{
+		font-size: 4em;
+		position: relative;
+		margin: 0 auto;
+		top: 12%;
+		text-align: center;
+		font-family: Lato, sans-serif;
+		color: white;
+		transition: font-size 0.3s linear;
+	}
+	.form-style-8{
+		position: relative;
+		top: 12%;
+		font-family: 'Open Sans Condensed', arial, sans;
+		width: 70%;
+		height: 45%;
+		padding: 30px;
+		background: #FFFFFF;
+		margin: 50px auto;
+		transition: width 0.3s linear;
+	}
+	.form-style-8 h2{
+		background: white;
+		text-transform: uppercase;
+		font-family: 'Open Sans Condensed', sans-serif;
+		color: white;
+		font-size: 1em;
+		font-weight: 100;
+		padding: 20px;
+		margin: -30px -30px 30px -30px;
+		text-align: center;
+	}
+	.form-style-8 input[type="text"],
+	.form-style-8 input[type="date"],
+	.form-style-8 input[type="datetime"],
+	.form-style-8 input[type="email"],
+	.form-style-8 input[type="number"],
+	.form-style-8 input[type="search"],
+	.form-style-8 input[type="time"],
+	.form-style-8 input[type="url"],
+	.form-style-8 input[type="password"],
+	.form-style-8 textarea,
+	.form-style-8 select
+	{
+		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		outline: none;
+		display: block;
+		width: 100%;
+		padding: 7px;
+		border: none;
+		border-bottom: 1px solid #ddd;
+		background: transparent;
+		margin-bottom: 10px;
+		font: 16px Arial, Helvetica, sans-serif;
+		height: 45px;
+		-webkit-transition: border-bottom 0.3s;
+		transition: border-bottom 0.3s;
+	}
+	.form-style-8 textarea{
+		resize:none;
+		overflow: hidden;
+	}
+	.form-style-8 input[type="button"],
+	.form-style-8 input[type="submit"]{
+		background-color: white;
+		border: 1px solid #ffffff;
+		display: block;
+		cursor: pointer;
+		color: black;
+		border: 1px solid black;
+		font-family: 'Open Sans Condensed', sans-serif;
+		font-size: 14px;
+		padding: 8px 18px;
+		text-decoration: none;
+		text-transform: uppercase;
+		transition: all 0.3s linear;
+		margin: 30px auto 0;
+		position: relative;
+		top: 50px;
+		margin: 0 auto;
+	}
+	.form-style-8 input[type="button"]:hover,
+	.form-style-8 input[type="submit"]:hover {
+		background-color: #eb0029;
+		color: white;
+	}
+	.form-style-8 input:focus,
+	.form-style-8 textarea:focus{
+		border-bottom: 1px solid black;
+	}
+	.social{
+		width: 20%;
+		position: relative;
+		top: 25%;
+		left: 48%;
+		height: 20px;
+	}
+
+	.social svg{
+		position: relative;
+		transition: all 0.3s ease;
+	}
+	.social svg.fb{
+		left: 1%;
+	}
+	.social svg.ins{
+		left: 2%;
+	}
+	.social svg.tw{
+		left: 3%;
+	}
+
+/*responsive*/
+	@media (max-width: 1666px) {
+		.logo{
+			left: 25px;
+		}
+		svg{
+			left: 125px;
+		}
+		.topmenu nav a{
+			left: 250px;
+		}
+		.imazh{
+			background-size: contain;
+		}
+	}
+
+	@media (max-width: 1400px) {
+
+		.topmenu .allNews{
+			display: none;
+		}
+		.social{
+			left: 46%;
+		}
+		.imazh{
+			background: url("../imazhe/poster-shtri.jpg") no-repeat center center;
+			background-size: contain;
+		}
+
+		.team h3, .volonteri h3{
+			font-size: 1em;
+		}
+	}
+	
+	
+	@media (max-width: 1089px) {
+
+		.topmenu nav{
+			display: none;
+		}
+		
+		.volonteri{
+			padding-left: 15%;
+		}
+
+		.volun{
+			padding-left: 13px; 
+		}
+
+		.boldTeam{
+			display: none;
+		}
+		.social{
+			left: 45%;
+		}
+	
+		.progCont{
+			top: 10%;
+			left: 5%;
+		}
+		h1.titll{
+			text-align: center;
+			position: relative;
+			font-size: 1.5em;
+			font-family: Lato, sans-serif;
+			transition: font-size 0.3s linear;
+		}
+
+		h1.tit{
+			padding-left: 0;
+			width:50%;
+			display: block;
+			margin: 0 auto;
+			font-size: 1.5em;
+			font-family: Lato, sans-serif;
+			transition: font-size 0.3s linear;
+		}
+		
+		.progCont .data .dat{
+			font-size: 1.3em;
+		}
+		.progCont .data .dat.hapja{
+			padding-bottom: 1.3em;
+		}
+		.progCont .data .filmat{
+			line-height: 1em;
+		}
+		#team{
+			height: auto;
+		}
+		.team h2{
+			font-size: 0.9em;
+		}
+		.team, .volonteri{
+			width: 100%;
+		}
+
+		.team{
+			padding-left: 25px;;
+		}
+		
+		.team h3, .volonteri h3{
+			font-size: 0.9em;
+		}
+		#poster{
+			background: url("../imazhe/poster.jpg") no-repeat center center;
+			background-size: contain;
+		}
+		#sponsors h2, .slogos, .spartners{
+			display: none;
+		}
+		#sponsors{
+			background: url("../imazhe/sponsors/sponsors.png") no-repeat center center;
+			background-size: contain;
+		}
+		.nji h2{
+			position: relative;
+			top: 35%;
+			text-align: center;
+			color: white;
+			font-size: 0.9em;
+			font-weight: 700;
+			font-family: Lato, sans-serif;
+		}
+		.topmenu .volunt{
+			display: none;
+		}
+		.nji.vol .content{
+			width: 100%;
+		}
+		.form-style-8{
+		top: 13%;
+		width: 100%;
+		}
+		.flag-icon{
+			position: relative;
+			left: 80%;
+			top: 15%;
+			padding: 7px;
+		}
+		#contact h1{
+			padding-bottom: 35px;
+			font-size: 3em;
+		}
+		.tit{
+			font-size: 1.3em;
+		}
+		
+	}
+
+	@media (max-width: 960px) {
+		.imazh{
+			background: url("../imazhe/poster.jpg") no-repeat center center;
+			background-size: contain;
+			background-position-y: 70px;
+		}
+
+		.next{
+			left: 80%;
+		}
+	}
+
+	@media (max-width: 720px) {
+		/* #main .imazh{
+			background: url("../imazhe/cover/cover.png") no-repeat center center;
+			background-size: cover;
+		} */
+		.social{
+			left: 43%;
+		}
+		.logo{
+			left: 45%;
+		}
+		svg{
+			left: 3%;
+		}
+		.topmenu{
+			background-image: none;
+		}
+		#news{
+			width: 100%;
+		}
+	}
